@@ -1,0 +1,87 @@
+<?php if ($userSession->isAuthenticated()): ?>
+<article class="forum">
+    <h2>Le forum d'entraide</h2>
+    <p></p>
+    <table class="listSubject">
+        <tbody>
+            <tr>
+                <td>
+                    <div class="post">
+                        <div>
+                            <i class="fa fa-comments"></i>
+                        </div>
+                        <div>
+                            <h3><a href="<?= $requestUrl ?>/forum/subject?language=html">html</a></h3>
+                            <p>nombre de conversation: <em><strong><span><?= htmlspecialchars($countHtml['nbr']) ?></span></strong></em></p>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="post">
+                        <div>
+                            <i class="fa fa-comments"></i>
+                        </div>
+                        <div>
+                            <h3><a href="<?= $requestUrl ?>/forum/subject?language=css">css</a></h3>
+                            <p>nombre de conversation: <em><strong><span><?= htmlspecialchars($countCss['nbr']) ?></span></strong></em></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="post">
+                        <div>
+                            <i class="fa fa-comments"></i>
+                        </div>
+                        <div>
+                            <h3><a href="<?= $requestUrl ?>/forum/subject?language=javascript">javascript</a></h3>
+                            <p>nombre de conversation: <em><strong><span><?= htmlspecialchars($countJavascript['nbr']) ?></span></strong></em></p>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="post">
+                        <div>
+                            <i class="fa fa-comments"></i>
+                        </div>
+                        <div>
+                            <h3><a href="<?= $requestUrl ?>/forum/subject?language=php">php</a></h3>
+                            <p>nombre de conversation: <em><strong><span><?= htmlspecialchars($countPhp['nbr']) ?></span></strong></em></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="post">
+                        <div>
+                            <i class="fa fa-comments"></i>
+                        </div>
+                        <div>
+                            <h3><a href="<?= $requestUrl ?>/forum/subject?language=mysql">mysql</a></h3>
+                            <p>nombre de conversation: <em><strong><span><?= htmlspecialchars($countMysql['nbr']) ?></span></strong></em></p>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="post">
+                        <div>
+                            <i class="fa fa-comments"></i>
+                        </div>
+                        <div>
+                            <h3><a href="<?= $requestUrl ?>/forum/subject?language=other">autre</a></h3>
+                            <p>nombre de conversation: <em><strong><span><?= htmlspecialchars($countOther['nbr']) ?></span></strong></em></p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="createSubject">
+        <a class="newSubject" href="<?= $requestUrl ?>/forum/newSubject">&Eacute;crire une nouvelle discussion</a>
+    </div>
+</article>
+<?php else: ?>
+    <p class="connectError">Pour participer au forum vous devez être connecter</p>
+<?php endif ?>

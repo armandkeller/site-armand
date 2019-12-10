@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title><?= (isset($title)) ? $title : false ?></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/home.css">
+    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/career.css">
+    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/forum.css">
+    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/games.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+</head>
+<body>
+
+<!-- En-tête commune -->
+<header>
+    <h1>Armand Keller <br> Développeur Web</h1>
+    <?php if (!$userSession->isAuthenticated()): ?>
+        <div>
+            <a href="<?= $requestUrl ?>/registration"><i class="fa fa-plus" aria-hidden="true"></i>Inscription</a>
+            <a href="<?= $requestUrl ?>/registration/user"><i class="fa fa-user" aria-hidden="true"></i> Connexion</a>
+        </div>
+    <?php else: ?>
+        <div>
+            <a href="<?= $requestUrl ?>/registration/disconnection"><i class="fa fa-sign-out" aria-hidden="true"></i>Déconnexion</a>
+        </div>
+        <p class="welcome">Bonjour <?= $userSession->getFirstName() ?></p>
+        <?php if ($userSession->isAdmin() && isset($ipModel)): ?>
+            <?php $visit = $ipModel->totalVisit() ?>
+            <p>Nombres de visites au total: <?= $visit['totalVisit'] ?></p>
+        <?php endif ?>
+    <?php endif ?>
+    <nav>
+        <a href="<?= $requestUrl ?>">Accueil</a>
+        <a href="<?= $requestUrl ?>/myPath">Mon parcours</a>
+        <a href="<?= $requestUrl ?>/myGames">Mes jeux</a>
+        <a href="<?= $requestUrl ?>/forum">Forum</a>
+        <?php if (!$userSession->isAdmin()): ?>
+            <a href="<?= $requestUrl ?>/registration/contact">Contact</a>
+        <?php else : ?>
+            <?php $userModel = new UserModel();
+            $notification = $userModel->notification('new') ?>
+            <a href="<?= $requestUrl ?>/message">Messages <?=  ($notification['COUNT(*)'] !== '0') ? '<span class=\'circle\'>'.htmlspecialchars($notification['COUNT(*)']).'</span>': false ?></a>
+        <?php endif ?>
+    </nav>
+</header>
+
+
+<main>
+    <!-- Affichage du template lié à la vue -->
+    <?php include $this->viewData['template'] ?>
+</main>
+
+<!-- Pied de page commun -->
+<footer>
+    <nav>
+        <ul>
+            <li><span><i class="fa fa-share-square-o fa-lg" aria-hidden="true"></i>réseaux sociaux</span>
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/armand-keller-dev-web/" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=100003714600565" target="_blank">Facebook</a></li>
+                    <li><a href="mailto:m.armandkeller@gmail.com">Email</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul>
+            <li><span><i class="fa fa-info fa-lg" aria-hidden="true"></i>Informations Pratiques:</span>
+                <ul>
+                    <li><a href="<?= $requestUrl ?>/mentions">Mentions legales</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</footer>
+<script src="<?= $wwwUrl ?>/js/bundle.js"></script>
+<script src="<?= $wwwUrl ?>/js/result.js"></script>
+</body>
+</html>

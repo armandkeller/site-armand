@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>MonBlog</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="public/css/style.css">
+</head>
+<body>
+    <header>
+        <a href="index.php"><img src="public/img/software.png" width="100" height="100" alt="php" title="php"></a>
+        <h1>Le blog du dev</h1>
+        <a class="toto" href="index.php?action=admin"><i class="fa fa-cogs"></i> Espace administrateur</a>
+    </header>
+    <main>
+        <?= $content ?>
+    </main>
+    <script src="public/jquery/jquery-3.2.1.min.js"></script>
+    <script src="public/ckeditor/ckeditor.js"></script>
+    <script>
+        /* la fonction substr de php me génére des bugs dans homeview frontend j'utilise donc la methode en js */
+        window.addEventListener('DOMContentLoaded', function() {
+            $('.contentSubstr').each(function() {
+                $(this).replaceWith($(this).html().substr(0,200) + ' [...]');
+            });
+            CKEDITOR.replace('editor');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+* {
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.4%;
+}
+body {
+    font-size: 1.6rem;
+    background: url("../img/fond.jpg") no-repeat fixed center center / cover;
+    color: white;
+}
+.start .start, .button p {
+    cursor: pointer;
+}
+.start, h3, #message {
+    text-align: center;
+}
+.game {
+    margin-top: 30px;
+}
+.game img {
+    display: inline-block;
+    margin: 10px;
+}
+.cardCroupier, .cardPlayer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.button {
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+}
+.button p {
+    display: inline-block;
+    margin: 0 20px 0;
+}
+.button .draw {
+    background-color: #00acee;
+}
+.button .stop {
+    background-color: red;
+}

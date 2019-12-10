@@ -1,0 +1,231 @@
+@charset "utf-8";
+
+* {
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    font-size: 1.4rem;
+    font-family: "proxima-nova", sans-serif;
+    background: url('../img/grenoble1.jpg') no-repeat fixed center center / cover;
+    min-height: 100vh;
+    position: relative;
+}
+.fa {
+    margin: 5px;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+ul {
+    list-style: none;
+}
+img {
+    max-width: 100%;
+}
+header, footer {
+    color: white;
+}
+header {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+    text-shadow: 5px 5px 5px black;
+    padding: 40px 0 40px;
+}
+header h1 {
+    font-family: 'Indie Flower', cursive;
+    text-align: center;
+    color: white;
+    font-size: 3em;
+}
+header div {
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    margin-right: 5%;
+}
+header p.welcome {
+    text-align: center;
+    font-size: 1.3em;
+}
+header nav a {
+    font-size: 1.8em;
+}
+header nav .circle {
+    padding: 0 11px 0 11px;
+    color: white;
+    background-color: red;
+    border-radius: 100px;
+}
+header div a {
+    display: block;
+    padding: 10px;
+    font-size: 1.3em;
+}
+header nav {
+    background-color: black;
+    padding: 15px 0 15px;
+}
+header nav a:hover {
+    color: orange;
+}
+header nav, footer nav {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 60px;
+}
+main {
+    padding: 0 40px 200px 40px;
+    color: white;
+    font-size: 1.2em;
+}
+main form input[type=submit] {
+    padding: 0 8px 0;
+    background-color: blue;
+    color: white;
+    margin-bottom: 10px;
+}
+main section.home h2 {
+    font-size: 2.2em;
+}
+main section.home div.diapo {
+    margin: 100px auto;
+    transform: rotate(-8deg);
+    text-align: center;
+    padding: 0 10px 0;
+}
+main section.home div.diapo img.slider {
+    padding: 8px;
+    background-color: white;
+    border-radius: 10px;
+    height: auto;
+}
+main article.acount form fieldset, article form.login fieldset, article form.contact fieldset, form.changePassword {
+    width: 55%;
+    margin: 0 auto;
+    background-color: rgba(0,0,0,0.8);
+    font-size: 1.1em;
+}
+main article.crud p.message {
+    text-align: center;
+    font-size: 1.2em;
+    text-shadow: 5px 5px 5px black;
+}
+main article.acount form div, article form.login div, form.changePassword div {
+    padding: 10px 5% 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+main article.acount p, main article.toConnect p, p.errorChangePassword {
+    font-size: 1.8em;
+    text-align: center;
+}
+main form.contact textarea {
+    overflow: hidden;
+}
+main article.crud table {
+    border: 2px solid white;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 50px auto;
+    text-align: center;
+    font-size: 1.2em;
+    color: black;
+    overflow: scroll;
+}
+main article.crud table td:nth-of-type(3) {
+    text-align: left;
+}
+main article.crud span.totalMessage {
+    color: red;
+}
+main article.crud table caption {
+    padding: 10px;
+    color: white;
+}
+main article.crud span.notif {
+    color: red;
+    display: block;
+}
+main article.crud table td, main article.crud table th {
+    border: 1px solid white;
+    padding: 10px;
+    background-color: rgba(197, 197, 197, 0.9);
+}
+main article.crud table .col2 {
+    width: 5%;
+}
+main section.parcours {
+    font-size: 1.2em;
+    text-shadow: 5px 5px 5px black;
+}
+footer {
+    text-transform: uppercase;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+footer ul ul {
+    margin: 10px;
+}
+footer ul ul li {
+    margin: 5px;
+}
+footer p {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    header div {
+        align-items: center;
+        margin: 0;
+    }
+    header nav a:hover {
+        color: white;
+    }
+    header nav {
+        align-items: center;
+        flex-direction: column;
+        background-color: black;
+    }
+    header nav a {
+        margin: 10px;
+        font-size: 1.3em;
+        display: block;
+    }
+    main {
+        padding: 10px 10px 200px 10px;
+        font-size: 0.8em;
+    }
+    main section.home div.diapo {
+        padding: 30px;
+    }
+    main section.home h2 {
+        text-align: center;
+    }
+    footer ul {
+        padding: 0;
+    }
+    footer {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 600px) {
+    main article.acount form div, article form.login div {
+        flex-direction: column;
+    }
+    main article.acount form fieldset, article form.login fieldset {
+        text-align: center;
+    }
+}
+
+@media (max-width: 400px) {
+    main article.acount form fieldset, article form.login fieldset {
+        width: 95%;
+    }
+}

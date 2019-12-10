@@ -1,0 +1,21 @@
+<article class="forum">
+    <h2>Thème: <?= htmlspecialchars($queryFields['language']) ?></h2>
+    <?php if (!empty($posts)) :?>
+        <?php foreach ($posts as $post): ?>
+            <?php $count = $commentModel->getCountComment($post['id']) ?>
+            <div class="article">
+                <div>
+                    <p class="subject"><strong><?= htmlspecialchars($post['subject']) ?></strong></p>
+                    <a href="<?= $requestUrl ?>/forum/article?id=<?= htmlspecialchars($post['id']) ?>"><em>voir la conversation</em></a>
+                </div>
+                <div>
+                    <p>par: <?= htmlspecialchars($post['name']) ?></p>
+                </div>
+                <p><i class="fa fa-comments"></i>commentaire(s): <span><strong><em><?= htmlspecialchars($count['COUNT(*)']) ?></em></strong></span></p>
+                <p>Date: <?= htmlspecialchars($post['createdAt']) ?></p>
+            </div>
+        <?php endforeach ?>
+    <?php else :?>
+        <p>Il y a aucune conversation à ce sujet</p>
+    <?php endif ?>
+</article>

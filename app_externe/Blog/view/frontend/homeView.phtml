@@ -1,0 +1,10 @@
+<?php ob_start() ?>
+<?php foreach ($result AS $item) :?>
+    <article>
+        <h2><?= htmlspecialchars($item['title']) ?></h2>
+        <div class="contentSubstr"><?= $this->purifier->purify($item['content']) ?></div>
+        <p><em><a href="index.php?action=post&id=<?= htmlspecialchars($item['id']) ?>">voir la suite</a></em></p>
+    </article>
+<?php endforeach;
+$content = ob_get_clean();
+require 'view/layoutView.phtml';

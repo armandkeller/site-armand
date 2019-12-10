@@ -1,0 +1,21 @@
+<article class="message">
+    <h2>Me contacter</h2>
+    <?php if ($userSession->isAuthenticated()): ?>
+        <form class="contact hidden" action="#" method="post">
+            <fieldset>
+                <legend><i class="fa fa-envelope"></i>Envoyer un message</legend>
+                <div>
+                    <textarea id="message" name="message" rows="5" cols="48"></textarea>
+                </div>
+                <input class="submit" type="submit" value="Poster">
+            </fieldset>
+        </form>
+    <?php else: ?>
+        <p class="connectError">Vous devez vous connecter pour envoyer un message</p>
+    <?php endif ?>
+    <p class="error success"></p>
+</article>
+<script src="<?= $wwwUrl ?>/ckeditor/ckeditor.js"></script>
+<script>
+    var content = CKEDITOR.replace('message');
+</script>

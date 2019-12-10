@@ -1,0 +1,99 @@
+@charset "utf-8";
+
+main section.parcours div.maquettes {
+    display: flex;
+    justify-content: space-around;
+}
+main section.parcours ul {
+    display: flex;
+    width: 60%;
+    justify-content: space-around;
+    list-style: none;
+    margin: 50px auto;
+    background-color: rgba(0,0,0,0.9);
+    border-radius: 30px;
+    border: 2px solid white;
+    padding: 25px 0 25px;
+}
+main section.parcours ul li a img {
+    transform-origin:center bottom;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+}
+main section.parcours ul li a img:hover {
+    transform: scale(1.8);
+    -moz-transform: scale(1.8);
+    -o-transform: scale(1.8);
+    transform-origin:center bottom;
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+    -o-transition: all .3s linear;
+    transition: all .3s linear;
+}
+main section.impression, article.language {
+    background-color: rgba(0,0,0,0.8);
+    padding: 30px;
+    border-radius: 10px;
+    border: #ffffff solid 2px;
+    margin-top: 30px;
+}
+main section.diploma div {
+    text-align: center;
+}
+main article.language a, article.language h2 {
+    color: #c00003;
+}
+main article.language div.withOrWithoutCss {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+main article.language img {
+    display: block;
+    margin: 0 auto;
+}
+
+@media (max-width: 750px) {
+    main section.parcours ul {
+        flex-wrap: wrap;
+        padding: 0;
+        justify-content: space-around;
+        width: 100%;
+        text-align: center;
+    }
+    main section.parcours ul li {
+        width: 50%;
+        margin: 10px 0 10px;
+    }
+    main section.parcours ul li a img:hover {
+        transform: none;
+    }
+    main section.parcours div.maquettes {
+        flex-wrap: wrap;
+    }
+    main section.parcours div.maquettes a {
+        display: block;
+        margin: 15px 0 15px;
+    }
+}
+
+@media (min-width: 751px) and (max-width: 1240px) {
+    main section.parcours div.maquettes a {
+        width: 50%;
+        margin: 20px 0 20px;
+    }
+    main section.parcours div.maquettes {
+        flex-wrap: wrap;
+        text-align: center;
+    }
+    main article.language div.withOrWithoutCss div {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+    }
+}

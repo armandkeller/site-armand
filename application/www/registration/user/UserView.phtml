@@ -1,0 +1,24 @@
+<article class="toConnect">
+    <h2>Connexion</h2>
+    <?php if (isset($queryFields['state']) && $queryFields['state'] === 'success'): ?>
+        <p>Le mot de passe à bien été modifié</p>
+    <?php endif ?>
+    <form class="login hidden" method="post" action="">
+        <fieldset>
+            <legend><i class="fa fa-plug" aria-hidden="true"></i> Se connecter</legend>
+            <div>
+                <label for="mail">Adresse email</label>
+                <input id="mail" type="email" name="email">
+            </div>
+            <div>
+                <label for="password">Mot de passe</label>
+                <input id="password" type="password" name="password">
+            </div>
+            <div>
+                <input class="submit" type="submit" value="Connexion">
+                <a href="<?= $requestUrl ?>/registration/user/updatepassword">Mot de passe oublié</a>
+            </div>
+        </fieldset>
+    </form>
+    <p class="success error"></p>
+</article>

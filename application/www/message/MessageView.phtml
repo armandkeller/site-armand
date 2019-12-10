@@ -1,0 +1,26 @@
+<article class="crud">
+    <?php if ($numberOfMessages['COUNT(*)'] !== '0'): ?>
+        <table id="table">
+            <thead>
+                <tr>
+                    <th class="col2">Nom</th>
+                    <th class="col2">Email</th>
+                    <th>Message (<span class="totalMessage"><?= htmlspecialchars($numberOfMessages['COUNT(*)']) ?></span>)</th>
+                    <th class="col2">Date/heure</th>
+                </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($totalMessages AS $message): ?>
+                <tr>
+                    <td class="col2"><?= htmlspecialchars($message['name']) ?> <a class="trash" href="<?= $requestUrl ?>/message?delete=<?= htmlspecialchars($message['id']) ?>"> <i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+                    <td class="col2"><a class="notif" href="<?= $requestUrl ?>/message?notif=<?= htmlspecialchars($message['id']) ?>"><span class="notif"><?= htmlspecialchars($message['notification']) ?></span></a> <?= htmlspecialchars($message['mail']) ?></td>
+                    <td><?= $GLOBALS['purifier']->purify($message['message']) ?></td>
+                    <td class="col2"><?= htmlspecialchars($message['createdAt']) ?></td>
+                </tr>
+            <?php endforeach ?>
+            </tbody>
+        </table>
+    <?php else: ?>
+        <p class="message">Aucun nouveau message !</p>
+    <?php endif ?>
+</article>

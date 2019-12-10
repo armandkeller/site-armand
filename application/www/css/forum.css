@@ -1,0 +1,189 @@
+@charset "utf-8";
+
+main article.message p, p.connectError {
+    text-align: center;
+    font-size: 1.8em;
+}
+main article.forum {
+    background-color: rgba(226,226,226,0.9);
+    color: black;
+    text-shadow: none;
+    padding: 5%;
+}
+main table.listSubject {
+    width: 60%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+main table.listSubject td {
+    border: 1px solid black;
+    padding: 2px 0 2px 40px;
+}
+main table.listSubject td div.post {
+    display: flex;
+    align-items: center;
+}
+main table.listSubject td div.post div {
+    padding-right: 20px;
+}
+main table.listSubject td:hover {
+    background-color: #929292;
+}
+main table.listSubject span, main article.forum span {
+    color: red;
+}
+main article.forum div.article:nth-child(even) {
+    background-color: #8f8f8f;
+}
+
+main article.forum div.article div:first-of-type {
+    overflow-wrap: break-word;
+    width: 30%;
+}
+main article.forum div.article {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    padding: 5px 10px 5px;
+    width: 70%;
+    margin: 10px auto;
+    background-color: #f1f1f1;
+    min-height: 100px;
+}
+main article.forum div.createSubject {
+    text-align: center;
+    margin-top: 30px;
+}
+main article.forum div.createSubject a {
+    display: inline-block;
+    padding: 10px;
+    background-color: #b4b4b4;
+    margin: 0 auto;
+    text-align: center;
+}
+main article.forum div.discussion a {
+    display: block;
+    margin: 10px 0 10px;
+}
+main article form.subject fieldset {
+    width: 70%;
+    margin: 0 auto;
+    background-color: rgba(0,0,0,0.8);
+    font-size: 1.3em;
+}
+main article form.subject fieldset div:first-of-type label {
+    margin-right: 5%;
+}
+main article form.subject fieldset div:last-of-type label {
+    display: block;
+    margin: 20px 0 20px;
+}
+main article form.subject ul {
+    padding: 0 0 10px 5%;
+}
+main article form.subject ul li label {
+    display: flex;
+    justify-content: space-between;
+    width: 25%;
+    margin: 10px 0 10px;
+}
+main article form div {
+    padding: 10px 5% 10px;
+}
+main form.subject input[type=submit] {
+    margin: 20px 0 0 5%;
+}
+main article.forum, div.mentions {
+    background-color: rgba(226,226,226,0.9);
+    color: black;
+    text-shadow: none;
+
+}
+main div.mentions {
+    padding: 20px;
+}
+main article.forum img.user {
+    border-radius: 50px;
+}
+main article.forum div.discussion {
+    display: flex;
+}
+main article.forum div.discussion div:first-child {
+    margin-right: 50px;
+    text-align: center;
+}
+main article.forum div.discussion div:last-child {
+    overflow: auto;
+    width: 90%;
+    padding: 0 10px 0;
+    background-color: white;
+}
+main article.comment {
+    margin-top: 30px;
+}
+main article.comment form {
+    text-align: center;
+    background-color: #b6b6b6;
+    padding: 5%;
+}
+main article.comment form div {
+    margin: 0 auto;
+}
+main section.home p, article.forum > p {
+    font-size: 1.7em;
+    text-align: center;
+    margin: 0;
+    text-shadow: 5px 5px 5px black;
+}
+main article.comment div.comment:last-of-type {
+    border-bottom: none;
+}
+main article.comment div.comment div:first-child {
+    margin-right: 50px;
+    text-align: center;
+}
+main article.comment div.comment {
+    display: flex;
+    border-bottom: 1px solid #595959;
+    padding: 40px 0 40px;
+}
+main article.comment div.comment div:last-child {
+    width: 90%;
+    padding: 0 10px 0;
+    background-color: white;
+}
+
+@media (max-width: 700px) {
+    h2 {
+        text-align: center;
+    }
+    main {
+        padding-bottom: 200px;
+    }
+    main article form.subject ul li label {
+        width: 70%;
+    }
+    main article.forum div.article {
+        flex-direction: column;
+    }
+    main article.comment div.comment, article.forum div.discussion {
+        flex-direction: column;
+    }
+    main article form.subject fieldset {
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    main table.listSubject tr {
+        display: flex;
+        flex-direction: column;
+    }
+    main table.listSubject td {
+        border-bottom: none;
+    }
+    main table.listSubject tr:last-of-type td:last-of-type {
+        border-bottom: 1px solid black;
+    }
+}

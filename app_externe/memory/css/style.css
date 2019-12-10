@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+* {
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    font-size: 1.6rem;
+    background: url("../img/memory.jpg") no-repeat fixed center center / cover;
+    text-align: center;
+}
+.game span {
+    font-size: 2em;
+    margin: 20px 30px;
+    width: 50px;
+    cursor: pointer;
+}
+.game {
+    display: flex;
+    width: 50%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.index {
+    display: none;
+}
+.minute, .seconde {
+    margin: 0;
+}
+.timer {
+    text-align: center;
+    font-size: 1.7em;
+}

@@ -1,0 +1,29 @@
+<article class="language">
+    <h2>Le langage php</h2>
+    <p>Personal HomePage devenue aujourd'hui Hypertext Preprocessor, PHP est un langage de script orienté serveur.
+    Evidemment, il nécéssite un serveur local (par exemple Apache). Il est interprèt" et non compilé à
+    l'inverse de de Java ou C#</p>
+    <p>Même s’il peut être utilisé en ligne de commande, PHP est principalement associé à un serveur Web utilisant le
+    protocole HTTP dans le cadre d’une architecture client/serveur.</p>
+    <img src="<?= $wwwUrl ?>/img/languages/php_fonctionnement.png" width="469" height="212" alt="fonctionnement php" title="fonctionnement php">
+    <ol>
+        <li>Le client, le plus souvent un navigateur Web, fait la demande au serveur d’une page PHP au travers du protocole HTTP.</li>
+        <li>Le serveur HTTP envoie la page PHP à son interpréteur.</li>
+        <li>L’interprétation de la page PHP produit une page HTML de résultat fourni au serveur.</li>
+        <li>Le serveur Web renvoie cette page au client pour affichage.</li>
+    </ol>
+    <p>Les scripts php peuvent très bien s'integrer dans du html à condition que le fichier ait l'extension .php</p>
+    <img src="<?= $wwwUrl ?>/img/languages/php_html" width="1149" height="282" alt="php_html" title="php_html">
+    <p>Aujourd'hui, il existe beaucoup de bibliothèques autour de php pour redoubler d'efficacité et de rapidité.
+    Symfony ou encore Laravel sont l'un des plus gros piliers des frameworks utilisés dans le monde entier.</p>
+    <p>Voici un blog que j'ai développé en php où j'ai volontairement laissé l'accessibilité à l'espace
+    administrateur pour que vous voyez le frontend(espace du client) et le backend(espace de l'administrateur)</p>
+    <a href="../../app_externe/Blog/index.php" target="_blank"><img src="<?= $wwwUrl ?>/img/appli_externe/blog" width="900" height="600" title="blog" alt="blog"></a>
+    <p>Pendant ma formation le langage php à été difficile à appréhender, c'est un de mes langages préféré
+    il permet de donner au site une vive allure mais toutefois, il faut être extrêmement vigilant en ce qui
+    concerne la sécurité ! &Agrave; partir du moment où il y a des données en jeu, on laisse des failles et des ouvertures pour les pirates.
+    Il ne faut surtout pas négliger ces possibilités sinon votre site ne fera pas long feu ! Php nous offre beaucoup
+    de fonctions pour sécuriser au maximum votre site.</p>
+    <p>Encore un autre langage à découvrir en ce qui concerne les données d'un site: le langage <a href="<?= $requestUrl ?>/myPath/sql">SQL</a></p>
+    <small>extrait utilisé du site: http://prof.bpesquet.fr/cours/php-en-bref/</small>
+</article>

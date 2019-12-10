@@ -1,0 +1,33 @@
+<article>
+    <h2>Nouvelle discusion</h2>
+
+    <form class="subject" method="post" action="<?= $requestUrl ?>/forum/newSubject<?= (isset($queryFields['update'])) ? '?id='.$queryFields['id'] : false ?>">
+        <fieldset>
+            <?php if (isset($queryFields['state']) && $queryFields['state'] === 'false') :?>
+                <p>Tous les champs ne sont pas remplis !</p>
+            <?php endif ?>
+            <p>Langage:</p>
+            <ul class="listLanguage">
+                <?php if (isset($queryFields['id'])) :?>
+                    <li><label for="language">language choisit: <?= htmlspecialchars($article['languageChecked']) ?><input checked id="language" name="this" type="radio" value="<?= htmlspecialchars($article['idLanguage']) ?>"></label></li>
+                <?php endif ?>
+                <?php foreach ($languages as $language): ?>
+                    <li><label for="language"><?= htmlspecialchars($language['name']) ?><input id="language" name="this" type="radio" value="<?= htmlspecialchars($language['id']) ?>"></label></li>
+                <?php endforeach ?>
+            </ul>
+            <div>
+                <label for="subject">Sujet:</label>
+                <input id="subject" type="text" name="subject" value="<?= (isset($queryFields['id'])) ? htmlspecialchars($article['subject']) : false ?>">
+            </div>
+            <div>
+                <label for="editor">Contenu:</label>
+                <textarea id="editor" name="content"><?= (isset($queryFields['id'])) ? $GLOBALS['purifier']->purify($article['content']) : false ?></textarea>
+            </div>
+            <input type="submit" value="Envoyer">
+        </fieldset>
+    </form>
+</article>
+<script src="<?= $wwwUrl ?>/ckeditor/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace('editor');
+</script>

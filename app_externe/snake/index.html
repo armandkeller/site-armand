@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>snake</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Snake</h1>
+    <p class="newScore">Votre meilleur score: <span></span></p>
+    <div>
+        <div>
+            <p class="score">score: <span></span></p>
+        </div>
+        <canvas id="grill" height="540" width="540"></canvas>
+    </div>
+    <script src="jquery/jquery-3.2.1.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+        $(function () {
+            var game = new Snake();
+            game.start();
+        })
+    </script>
+</body>
+</html>

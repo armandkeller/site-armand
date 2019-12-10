@@ -1,0 +1,29 @@
+<?php ob_start() ?>
+<h2 class="admin">Tableau de bord</h2>
+<article class="oneArticle">
+    <h2><?= htmlspecialchars($onePost['title']) ?></h2>
+    <p><?= $this->purifier->purify($onePost['content']) ?></p>
+    <p><em>publié par: <?= htmlspecialchars($onePost['firstName']) ?> <?= htmlspecialchars($onePost['lastName']) ?></em></p>
+    <p>le: <strong><?= htmlspecialchars($onePost['createdAt']) ?></strong></p>
+</article>
+<article class="comments">
+    <h2>Commentaires</h2>
+    <table>
+        <tbody>
+        <?php foreach ($allComments AS $comment): ?>
+            <tr class="oneComment">
+                <td class="name">
+                    <p><strong>Pseudo: <br></strong><em><?= htmlspecialchars($comment['nickName']) ?></em></p>
+                    <p><?= htmlspecialchars($comment['createdAt']) ?></p>
+                </td>
+                <td class="content">
+                    <p><?= htmlspecialchars($comment['content']) ?></p>
+                </td>
+                <td><a href="index.php?action=deleteComment&id=<?= htmlspecialchars($comment['id']) ?>&idPost=<?= $_GET['id'] ?>"><i class="fa fa-trash fa-2x"></i></a></td>
+            </tr>
+        <?php endforeach ?>
+        </tbody>
+    </table>
+</article>
+<?php $content = ob_get_clean();
+require 'view/layoutView.phtml';

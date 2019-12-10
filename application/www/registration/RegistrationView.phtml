@@ -1,0 +1,26 @@
+<article class="acount">
+    <h2>Création d'un nouveau compte</h2>
+    <form class="creat hidden" method="post">
+        <fieldset>
+            <legend><i class="fa fa-book" aria-hidden="true"></i> Formulaire d'ajout</legend>
+            <div>
+                <label for="user">Nom d'utilisateur</label>
+                <input id="user" type="text" name="user" required>
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input id="email" type="email" name="email" required>
+            </div>
+            <div>
+                <label for="password">Mot de passe</label>
+                <input id="password" type="password" name="password" required>
+            </div>
+            <div>
+                <label for="confirmPassword">Confirmation du mot de passe</label>
+                <input id="confirmPassword" type="password" name="confirmPassword" required>
+            </div>
+            <input class="submit" type="submit" value="Envoyer">
+        </fieldset>
+    </form>
+    <p class="success error errorPassword exist"></p>
+</article>

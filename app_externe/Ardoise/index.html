@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+    <head>
+        <meta charset="utf-8">
+        <title>Mon ardoise magique</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <h1>MySlate</h1>
+        <canvas id="mySlate" width="640" height="480"></canvas>
+        <canvas id="palette" width="250" height="250"></canvas>
+        <div class="tools">
+            <div class="trait">
+                <i class="fa fa-trash fa-2x clear"></i>
+                <button data-trait="1" class="trait">trait fin</button>
+                <button data-trait="5" class="trait">trait moyen</button>
+                <button data-trait="15" class="trait">trait large</button>
+            </div>
+            <div class="color">
+                <div>
+                    <i data-color="white" data-size="15" class="fa fa-eraser" aria-hidden="true"></i>
+                    <i data-color="black" class="fa fa-circle black" aria-hidden="true"></i>
+                    <i data-color="red" class="fa fa-circle red" aria-hidden="true"></i>
+                    <i data-color="blue" class="fa fa-circle blue" aria-hidden="true"></i>
+                    <i data-color="green" class="fa fa-circle green" aria-hidden="true"></i>
+                    <i data-color="yellow" class="fa fa-circle yellow" aria-hidden="true"></i>
+                    <i data-color="purple" class="fa fa-circle violet" aria-hidden="true"></i>
+                </div>
+                <div>
+                    <p>épaisseur actuel</p>
+                    <canvas id="feature" height="50" width="100"></canvas>
+                </div>
+                <div>
+                    <p>couleur actuel</p>
+                    <canvas id="colorChoose" width="50" height="50"></canvas>
+                </div>
+            </div>
+        </div>
+        <script src="jquery/jquery-3.2.1.min.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/Pen.js"></script>
+        <script src="js/Program.js"></script>
+        <script src="js/Slate.js"></script>
+        <script src="js/Palette.js"></script>
+        <script src="js/ColorChoosing.js"></script>
+        <script src="js/FeatureChoosing.js"></script>
+    </body>
+</html>

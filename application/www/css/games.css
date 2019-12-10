@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+article.myGames .game {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+article.myGames div p {
+    display: inline-block;
+    margin-left: 12px;
+}
+article.myGames img {
+    max-width: 100%;
+    height: auto;
+}
+article.myGames p {
+    text-shadow: 10px 10px 10px black;
+}

@@ -1,0 +1,78 @@
+@charset "utf-8";
+
+* {
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    font-size: 1.4rem;
+    background: url("../img/fond.jpg") no-repeat fixed center center / cover;
+    min-height: 100vh;
+}
+h1 {
+    text-align: center;
+    color: #00ff9d;
+    margin: 30px 0 50px;
+}
+#mySlate, .tools {
+    margin: 0 100px 0;
+}
+#mySlate, #palette, #colorChoose, #feature {
+    background-color: white;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.8);
+    margin-bottom: 50px;
+}
+#colorChoose {
+    border-radius: 50px;
+}
+#palette {
+    margin-left: 100px;
+    text-align: right;
+    cursor: crosshair;
+}
+.trait {
+    margin-top: 20px;
+}
+.color .fa-circle {
+    display: inline-block;
+    margin: 5px;
+    font-size: 3em;
+}
+button {
+    margin: 15px;
+}
+.red {
+    color: red;
+}
+.blue {
+    color: blue;
+}
+.green {
+    color: green;
+}
+.yellow {
+    color: yellow;
+}
+.violet {
+    color: purple;
+}
+.fa-eraser {
+    font-size: 3em;
+    margin-right: 50px;
+}
+.color div:last-child {
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20%;
+}
+.color {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    padding: 30px 0 100px;
+}

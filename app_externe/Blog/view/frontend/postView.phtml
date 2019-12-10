@@ -1,0 +1,42 @@
+<?php ob_start() ?>
+<article class="oneArticle">
+    <h2><?= htmlspecialchars($onePost['title']) ?></h2>
+    <p><?= $this->purifier->purify($onePost['content']) ?></p>
+    <p><em>publié par: <?= htmlspecialchars($onePost['firstName']) ?> <?= htmlspecialchars($onePost['lastName']) ?></em></p>
+    <p>le: <strong><?= htmlspecialchars($onePost['createdAt']) ?></strong></p>
+</article>
+<form action="index.php?action=addComment&id=<?= htmlspecialchars($onePost['id']) ?>" method="post">
+    <fieldset>
+        <legend><i class="fa fa-pencil"></i> Commentaire</legend>
+        <div>
+            <label for="nickName">pseudo</label>
+            <input id="nickName" type="text" name="nickName">
+        </div>
+        <div>
+            <label for="content">commentaire</label>
+            <textarea cols="80" rows="12" id="content" name="content"></textarea>
+        </div>
+        <input type="submit" value="Envoyer">
+    </fieldset>
+</form>
+<article class="comments">
+    <h2>Commentaires</h2>
+    <table>
+        <tbody>
+            <?php foreach ($allComments AS $comment): ?>
+                <tr class="oneComment">
+                    <td class="name">
+                        <p><strong>Pseudo: <br></strong><em><?= htmlspecialchars($comment['nickName']) ?></em></p>
+                        <p><?= htmlspecialchars($comment['createdAt']) ?></p>
+                    </td>
+                    <td class="content">
+                        <p><?= htmlspecialchars($comment['content']) ?></p>
+                    </td>
+                </tr>
+            <?php endforeach ?>
+        </tbody>
+    </table>
+</article>
+<?php
+$content = ob_get_clean();
+require 'view/layoutView.phtml';

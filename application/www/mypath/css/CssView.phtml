@@ -1,0 +1,43 @@
+<article class="language">
+    <h2>Le language CSS3</h2>
+    <p>Initiale: Cascading Style Sheets</p>
+    <p>Le css est un langage qui va styliser le site internet (police, couleur, forme etc..)
+    Avec sa troisième version, il offre plus de fonctionnalités comme les transitions, les transformations 3D,
+    les dégradés et même de nouveaux sélecteurs. La précédente version obligeait à utiliser
+    javascript pour ces fonctionnalités-là</p>
+    <div class="withOrWithoutCss">
+        <div>
+            <img src="<?=$wwwUrl ?>/img/languages/aveccss.png" height="400" width="500"  title="boostrap" alt="boostrap">
+            <p><strong>Avec css</strong></p>
+        </div>
+        <div>
+            <img src="<?=$wwwUrl ?>/img/languages/sanscss.png" height="400" width="500"  title="boostrap" alt="boostrap">
+            <p><strong>Sans css</strong></p>
+        </div>
+    </div>
+    <p>La « cascade » est la combinaison de différentes sources de styles appliqués à un même document, selon
+    leur degré respectif de priorité.<br>
+    L'avantage de l'utilisation d'un fichier CSS pour la mise en forme d'un site réside dans la possibilité
+    de modifier tous les titres du site en une seule fois en modifiant une seule partie du fichier CSS. Sans celui-ci,
+    il serait nécessaire de modifier chaque titre de chaque page du site (difficilement envisageable pour les énormes sites
+    de plusieurs milliers de pages).</p>
+    <p>Exemple de feuille de style:</p>
+    <img src="<?=$wwwUrl ?>/img/languages/cssexemple.png" height="450" width="621"  title="indentation de code" alt="indentation de code">
+    <p>Voilà à quoi ressemble le css. Pour les personnes qui n'en n'ont encore jamais vu, on peut déjà
+    avoir une petite idée de ce qu'il se passe. Beaucoup de mots en anglais sont utilisés, mais tout comme la
+    programmation en général.</p>
+    <p>Il existe une bibliothèque (framework) nommée bootstrap qui a l'avantage d'appliquer des styles
+    directement dans nos balises html. Exemple:</p>
+    <img src="<?=$wwwUrl ?>/img/languages/boostrapexemple.png" height="400" width="621"  title="boostrap" alt="boostrap">
+    <p>Dans les balises html, la "grammaire" spécifique contenue dans l'attribut "class" est celle de boostrap,
+    ont une fonction bien précise. Fini les feuilles de style, bonjour le gain de temps ! Enfin, rien n'empêche d'utiliser
+    du css en plus, pour retoucher 2-3 éléments. Le choix d'une bibliothèque reste pour ma part
+    un choix personnel dependant des besoins du site.<br>
+    Comme pour le html il existe un validator de css:<br>
+    <a href="https://jigsaw.w3.org/css-validator/#validate_by_input" target="_blank">https://jigsaw.w3.org/css-validator/#validate_by_input</a></p>
+    <p>En résumé, le css est la complémentation de l'html. Le site prend forme et il ne reste plus qu'a
+    le rendre interactif grâce à un langage comme <a href="<?= $requestUrl ?>/myPath/js">Javascript</a> par exemple.<br>
+    Lors de ma formation, le css s'est révélé un peu plus difficile car c'est un langage très puissant
+    permettant de faire des choses très poussées ! Jeter un petit coup d'oeil <a href="https://keithclark.co.uk/labs/css-fps/" target="_blank">ici</a> ;-)</p>
+    <small>extrait du site: https://fr.wikipedia.org/wiki/Feuilles_de_style_en_cascade</small>
+</article>
